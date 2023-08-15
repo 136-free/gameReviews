@@ -8,6 +8,7 @@ class MypageScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mypage'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: const Center(
         child: Text('Mypage', style: TextStyle(fontSize: 32.0),),
