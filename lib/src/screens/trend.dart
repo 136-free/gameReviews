@@ -5,12 +5,12 @@ class TrendScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var gridPS5 = ["eldenRing", "theWitcher3", "godOfWarRagnarok", "hades", "tetrisEffectConnected", "residentEvil4"];
+    var gridPS5 = ["eldenRing", "theWitcher3", "godOfWarRagnarok", "hades", "tetrisEffectConnected", "residentEvil4", "demonSSouls", "streetFighter6", "persona5TheRoyal", "rogueLegacy2", ];
     var gridSwitch = ["breathOfTheWild", "superMarioOdyssey", "theHouseInFataMorgana", "tearsOfTheKingdom", "portal", "tetrisEffectSwitch"];
-    var scoresPS5 = [96, 94, 94, 93, 93, 92];
+    var scoresPS5 = [96, 94, 94, 93, 93, 92, 92, 92, 91, 90];
     var scoresSwitch = [97, 97, 96, 96, 95, 94];
-    var playedMen = [0, 1, 2, 3, 4, 5];
-    var clips = [0, 1, 2, 3, 4, 5];
+    var playedMen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var clips = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ];
     return DefaultTabController(
         initialIndex: 0,
         length: 4,
@@ -46,7 +46,7 @@ class TrendScreen extends StatelessWidget {
                     ),
                     itemBuilder: (BuildContext context, int index) {
                       if (index >= gridPS5.length) {
-                        gridPS5.addAll(["eldenRing", "theWitcher3", "godOfWarRagnarok", "hades", "tetrisEffectConnected", "residentEvil4"]);
+                        gridPS5.addAll(["eldenRing", "theWitcher3", "godOfWarRagnarok", "hades", "tetrisEffectConnected", "residentEvil4", "demonSSouls", "streetFighter6", "persona5TheRoyal", ]);
                       }
                       return _photoItem(gridPS5[index], scoresPS5[index], playedMen[index], clips[index]);
                     }
