@@ -7,68 +7,68 @@ class HomeScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    var titlePS5 = ["eldenRing", "theWitcher3", "godOfWarRagnarok", "hades", "tetrisEffectConnected", "residentEvil4", "demonSSouls", "streetFighter6", "persona5TheRoyal", "rogueLegacy2", ];
-    var usernames = ["Sam", "Takkun", "Daichi", "Mockey", "Toshi", "Daddy", "Coquita", "Minami", "Bao", "Jack", ];
+    List<Tweet> tweets = [
+      Tweet(username: "Sam", title: "eldenRing", ),
+      Tweet(username: "Daichi", title: "theWitcher3", ),
+      Tweet(username: "Takkun", title: "godOfWarRagnarok", ),
+      Tweet(username: "Mockey", title: "hades", ),
+      Tweet(username: "Toshi", title: "tetrisEffectConnected", ),
+      Tweet(username: "Hibiki", title: "residentEvil4", ),
+      Tweet(username: "Nadja", title: "demonSSouls", ),
+      Tweet(username: "Taro", title: "streetFighter6", ),
+      Tweet(username: "Aimo", title: "persona5TheRoyal", ),
+      Tweet(username: "King", title: "rogueLegacy2", ),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ), 
       body: ListView.builder(
-        itemCount: titlePS5.length,
+        itemCount: tweets.length,
         itemBuilder: (context, index) {
-          return Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                          color: Colors.grey
-                      )
-                  )
-              ),
-              child:ListTile(
-                leading: CircleAvatar(
-                  child: Icon(Icons.person),
-                ),
-                title: Text(
-                  usernames[index],
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text('『' + titlePS5[index] + '』をClip!'),
-                trailing: Image.asset('images/'+ titlePS5[index] + '.jpeg'),
-              )
-          );
+            return ClipItem(
+                tweet: tweets[index],
+            );
           },
       ),
     );
   }
 }
 
-// class ClipItem extends StatelessWidget {
-//   final String tweet;
-//
-//   ClipItem({required this.tweet});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         decoration: BoxDecoration(
-//             border: Border(
-//                 bottom: BorderSide(
-//                     color: Colors.grey
-//                 )
-//             )
-//         ),
-//         child:ListTile(
-//           leading: CircleAvatar(
-//             child: Icon(Icons.person),
-//           ),
-//           title: Text(
-//             usernames[index],
-//             style: TextStyle(fontWeight: FontWeight.bold),
-//           ),
-//           subtitle: Text('『' + titlePS5[index] + '』をClip!'),
-//           trailing: Image.asset('images/'+ titlePS5[index] + '.jpeg'),
-//         )
-//     );
-//   }
-// }
+class Tweet {
+  final String username;
+  final String title;
+
+  Tweet({required this.username, required this.title});
+}
+
+class ClipItem extends StatelessWidget {
+  final Tweet tweet;
+
+  ClipItem({required this.tweet, });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        decoration: BoxDecoration(
+            border: Border(
+                bottom: BorderSide(
+                    color: Colors.grey
+                )
+            )
+        ),
+        child:ListTile(
+          leading: CircleAvatar(
+            child: Icon(Icons.person),
+          ),
+          title: Text(
+            tweet.username,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text('『' + tweet.title + '』をClip!'),
+          trailing: Image.asset('images/'+ tweet.title + '.jpeg'),
+        )
+    );
+  }
+}
