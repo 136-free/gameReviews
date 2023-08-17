@@ -7,7 +7,26 @@ class NewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('news'),
+        title: RichText(
+          text: TextSpan(
+            children: [
+              WidgetSpan(
+                  child: Icon(
+                    Icons.mode_comment_outlined,
+                    size: 30,
+                  ),
+              ),
+              TextSpan(
+                text: 'news',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                )
+              )
+            ]
+          ),
+        ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: const Center(

@@ -22,7 +22,26 @@ class TrendScreen extends StatelessWidget {
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
             // Here we take the value from the MyHomePage object that was created by
             // the App.build method, and use it to set our appbar title.
-            title: Text('Trend'),
+            title: RichText(
+              text: TextSpan(
+                children: [
+                  WidgetSpan(
+                      child: Icon(
+                        Icons.trending_up,
+                        size: 30,
+                      )
+                  ),
+                  TextSpan(
+                      text: 'Trend',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                  ),
+                ]
+              ),
+            ),
             bottom:  const TabBar(
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,

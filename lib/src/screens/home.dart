@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Tweet> tweets = [
       Tweet(username: "麦らァ", title: "eldenRing", url: "https://1.bp.blogspot.com/-tVeC6En4e_E/X96mhDTzJNI/AAAAAAABdBo/jlD_jvZvMuk3qUcNjA_XORrA4w3lhPkdQCNcBGAsYHQ/s1048/onepiece01_luffy.png", clip: true, ),
-      Tweet(username: "広告狩りのゾロ", title: "theWitcher3", url: "https://1.bp.blogspot.com/-rzRcgoXDqEg/YAOTCKoCpPI/AAAAAAABdOI/5Bl3_zhOxm07TUGzW8_83cXMOT9yy1VJwCNcBGAsYHQ/s1041/onepiece02_zoro_bandana.png", clip: true, ),
+      Tweet(username: "広告狩りのゾロ", title: "theWitcher3", url: "https://1.bp.blogspot.com/-rzRcgoXDqEg/YAOTCKoCpPI/AAAAAAABdOI/5Bl3_zhOxm07TUGzW8_83cXMOT9yy1VJwCNcBGAsYHQ/s1041/onepiece02_zoro_bandana.png", clip: false, text: "ウィッチャーの\nコンボ\n気持ちよすぎだろ！"),
       Tweet(username: "ナミ", title: "godOfWarRagnarok", url: "https://1.bp.blogspot.com/-2ut_UQv3iss/X-Fcs_0oAII/AAAAAAABdD8/jrCZTd_xK-Y6CP1KwOtT_LpEpjp-1nvxgCNcBGAsYHQ/s1055/onepiece03_nami.png", clip: true, ),
       Tweet(username: "乞食の王様こじキング", title: "hades", url: "https://1.bp.blogspot.com/-mZpzgXC1Sxk/YAOTCAKwWTI/AAAAAAABdOM/5B4hXli0KLU5N-BySHgjVbhZscKLSE-bQCNcBGAsYHQ/s1025/onepiece04_usopp_sogeking.png", clip: true, ),
       Tweet(username: "サンジ", title: "tetrisEffectConnected", url: "https://1.bp.blogspot.com/-HPG_x7XPky8/X-FctLTLkKI/AAAAAAABdEE/xs4T8m0FiBAFptXHGQhQ2c9ZmVWtaeQSgCNcBGAsYHQ/s1028/onepiece05_sanji.png", clip: true, ),
@@ -84,37 +84,6 @@ class ClipItem extends StatelessWidget {
     );
   }
 }
-
-// class TweetItem extends StatelessWidget {
-//   final Tweet tweet;
-//
-//   TweetItem({required this.tweet, });
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         decoration: BoxDecoration(
-//             border: Border(
-//                 bottom: BorderSide(
-//                     color: Colors.grey
-//                 )
-//             )
-//         ),
-//         child:ListTile(
-//           leading: CircleAvatar(
-//             // child: Icon(Icons.person),
-//             backgroundImage: NetworkImage(tweet.url),
-//           ),
-//           title: Text(
-//             tweet.username,
-//             style: TextStyle(fontWeight: FontWeight.bold),
-//           ),
-//           subtitle: Text(tweet.text ?? ''),
-//           trailing: Image.asset('images/'+ tweet.title + '.jpeg'),
-//         )
-//     );
-//   }
-// }
 
 class TweetItem extends StatelessWidget {
   final Tweet tweet;

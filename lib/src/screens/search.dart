@@ -8,7 +8,26 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('検索'),
+        title: RichText(
+          text: TextSpan(
+            children: [
+              WidgetSpan(
+                  child: Icon(
+                    Icons.search,
+                    size: 30,
+                  )
+              ),
+              TextSpan(
+                text: '検索',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+            ]
+          ),
+        ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SingleChildScrollView(
